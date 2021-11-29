@@ -71,3 +71,7 @@ C:\Users\nap\Documents\GitHub\1semester\1semester\semester 1\semester 1\bin\Debu
 C:\Users\nap\Documents\GitHub\1semester\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\libuv.dll
 C:\Users\nap\Documents\GitHub\1semester\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\runtimes\win7-x86\native\libuv.dll
 C:\Users\nap\Documents\GitHub\1semester\1semester\semester 1\semester 1\obj\Debug\netcoreapp3.1\semester 1.genruntimeconfig.cache
+C:\Users\nap\Documents\GitHub\1semester\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\spr_ArcherIdle_strip_NoBkg.xnb
+C:\Users\nap\Documents\GitHub\1semester\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\CollisionTexture.xnb
+C:\Users\nap\Documents\GitHub\1semester\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\charaset.xnb
+C:\Users\nap\Documents\GitHub\1semester\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\spr_ArcherIdle_strip_WithBkg.xnb

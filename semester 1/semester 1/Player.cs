@@ -7,28 +7,12 @@ using System.Text;
 
 namespace semester_1
 {
-    class Player : GameObject
+    internal  class Player : GameObject
     {
-        private Texture2D charaset;
-        // A timer that stores milliseconds.
-        float timer;
-        // An int that is the threshold for the timer.
-        int threshold;
-        // A Rectangle array that stores sourceRectangles for animations.
-        Rectangle[] sourceRectangles;
-        // These bytes tell the spriteBatch.Draw() what sourceRectangle to display.
-        byte previousAnimationIndex;
-        byte currentAnimationIndex;
+        
 
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            // Draw the entire sprite.
-            spriteBatch.Draw(charaset, new Vector2(100, 100), Color.White);
-            // Create a sourceRectangle.
-            Rectangle sourceRectangle = new Rectangle(0, 0, 48, 64);
-            // Only draw the area contained within the sourceRectangle.
-            spriteBatch.Draw(charaset, new Vector2(300, 100), sourceRectangle, Color.White);
-        }
+
+
 
         public override void LoadContent(ContentManager content)
         {
@@ -36,23 +20,38 @@ namespace semester_1
             timer = 0;
             // Set an initial threshold of 250ms, you can change this to alter the speed of the animation (lower number = faster animation).
             threshold = 250;
-            // Three sourceRectangles contain the coordinates of Alex's three down-facing sprites on the charaset.
-            sourceRectangles = new Rectangle[3];
-            sourceRectangles[0] = new Rectangle(0, 128, 48, 64);
-            sourceRectangles[1] = new Rectangle(48, 128, 48, 64);
-            sourceRectangles[2] = new Rectangle(96, 128, 48, 64);
+          
+            sourceRectangles = new Rectangle[12];
+            sourceRectangles[0] = new Rectangle(48, 0, 48, 128);
+            sourceRectangles[1] = new Rectangle(48, 0, 48, 128);
+            sourceRectangles[2] = new Rectangle(48, 0, 48, 128);
+            sourceRectangles[3] = new Rectangle(48, 0, 48, 128);
+            sourceRectangles[4] = new Rectangle(203, 0, 48, 128);
+            sourceRectangles[5] = new Rectangle(203, 0, 48, 128);
+            sourceRectangles[6] = new Rectangle(332, 0, 48, 128);
+            sourceRectangles[7] = new Rectangle(332, 0, 48, 128);
+            sourceRectangles[8] = new Rectangle(332, 0, 48, 128);
+            sourceRectangles[9] = new Rectangle(332, 0, 48, 128);
+            sourceRectangles[10] = new Rectangle(332, 0, 48, 128);
+            sourceRectangles[11] = new Rectangle(332, 0, 48, 128);
             // This tells the animation to start on the left-side sprite.
             previousAnimationIndex = 2;
             currentAnimationIndex = 1;
 
-            charaset = content.Load<Texture2D>("");
+            sprite = content.Load<Texture2D>("spr_ArcherIdle_strip_NoBkg");
             // Set the draw position.
             position = new Vector2(100, 100);
 
         }
 
+
+
+
+
         public override void Update(GameTime gameTime)
         {
+
+       
             // Check if the timer has exceeded the threshold.
             if (timer > threshold)
             {
