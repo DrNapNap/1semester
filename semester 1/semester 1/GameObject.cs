@@ -11,50 +11,62 @@ namespace semester_1
         public Vector2 position;
         public float rotaton;
         public Vector2 scale = Vector2.One;
-
-        protected Vector2 Origen;
-
-        protected Texture2D sprite;
-
-        // A timer that stores milliseconds.
-        protected float timer;
-        // An int that is the threshold for the timer.
-        protected int threshold;
-        // A Rectangle array that stores sourceRectangles for animations.
-
-        // These bytes tell the spriteBatch.Draw() what sourceRectangle to display.
-        protected byte previousAnimationIndex;
-        protected byte currentAnimationIndex;
-
-        protected Rectangle[] sourceRectangles;
+        protected Vector2 gridPosition;
 
         //Rendering
         public float layerDepth;
         protected SpriteEffects effect;
         public Rectangle rectangle;
 
-        public Rectangle CollisionBox { get; internal set; }
+        //Animation
+        protected Texture2D sprite;
+        protected Texture2D[] animations;
+        protected float animationSpeed;
+        private float timeEapsed;
+        private int currenIndex;
 
         protected GameObject()
         {
-  
+
+      
         }
+
+        public Vector2 Origen
+        {
+            get
+            {
+                if (sprite != null)
+                {
+                    return new Vector2(sprite.Width / 2, sprite.Height / 2);
+                }
+                return Vector2.Zero;
+            }
+        }
+        public Texture2D Sprite { get => sprite; set => sprite = value; }
 
 
         public abstract void Update(GameTime gameTime);
 
         public abstract void LoadContent(ContentManager content);
 
-
-        public void Draw(SpriteBatch spriteBatch )
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
-
-
-
-            spriteBatch.Draw(sprite, new Vector2(100, 100), sourceRectangles[currentAnimationIndex], Color.White);
-
-
+            spriteBatch.Draw(sprite, rectangle, null, Color.White, rotaton, Origen, effect, layerDepth);
         }
 
+        public virtual void Animate(GameTime gameTime)
+        {
+            timeEapsed += (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            currenIndex = (int)(timeEapsed * animationSpeed);
+
+            if (currenIndex >= animations.Length)
+            {
+                timeEapsed = 0;
+
+                currenIndex = 0;
+            }
+            sprite = animations[currenIndex];
+        }
     }
 }
