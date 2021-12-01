@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 namespace semester_1
 {
-    class Nextlvl
+    class Nextlvl : Enemy
     {
         //Singelton for instancing in other scripts
         private static Nextlvl instance = null;
@@ -24,11 +24,12 @@ namespace semester_1
         private const float Delay = 5; //seconds
         private float RemainingDelay = Delay;
         private SpriteFont font;
-        private SpriteEffects Effect;
         private bool winResult = false;
         private LevelManager LvlManager = new LevelManager();
 
         private int level = 0;
+
+        private SpriteEffects Effect;
 
         //Sets condition for level completion
         public void WinCondition()
@@ -36,11 +37,11 @@ namespace semester_1
             bool result = true;
 
        
-                //if ()
-                //{
-                //    result = false;
+                if (healthEnemy == 0)
+                {
+                    result = false;
                  
-                //}
+                }
             
 
             winResult = result;

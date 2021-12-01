@@ -31,9 +31,7 @@ namespace semester_1
         List<GameObject> addedGameObjects = new List<GameObject>(); //For gameobjectets der skal komme i gameObjevt listen
         List<GameObject> gameObjects = new List<GameObject>(); //For main loop
         List<GameObject> removingGameObjects = new List<GameObject>(); //For ting der skal fjernes
-        //Collision
-        //List<GameObjectWithCollider> collisionList = new List<GameObjectWithCollider>();
-
+ 
         #region Properties
         //GameObject
         public List<GameObject> GameObjects { get => gameObjects; set => gameObjects = value; }

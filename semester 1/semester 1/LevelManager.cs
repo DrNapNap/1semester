@@ -24,8 +24,8 @@ namespace semester_1
         {
             switch (whatObjects)
             {
-                case 4:
-                    return new Player(xPos, yPos);
+                case 1:
+                    return new Player();
             }
 
             return null;
