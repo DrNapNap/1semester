@@ -20,8 +20,7 @@ namespace semester_1
 
         //Gameobjcts
         private GameObjectManager objectManeger = GameObjectManager.Instance;
-        private float xPos;
-        private float yPos;
+
 
         public GameWorld()
         {
@@ -38,7 +37,7 @@ namespace semester_1
 
 
 
-            gameObjects.Add(new Player(xPos,yPos));
+            gameObjects.Add(new Player());
 
 
             base.Initialize();
@@ -83,22 +82,7 @@ namespace semester_1
             base.Update(gameTime);
         }
 
-        private void DrawCollisonBox(GameObject item)
-        {
 
-            Rectangle collis = item.CollisionBox;
-
-            Rectangle topLine = new Rectangle(collis.X, collis.Y, collis.Width, 1);
-            Rectangle bottom = new Rectangle(collis.X, collis.Y + collis.Height, collis.Width, 1);
-            Rectangle right = new Rectangle(collis.X + collis.Width, collis.Y, 1, collis.Height);
-            Rectangle leftL = new Rectangle(collis.X, collis.Y, 1, collis.Height);
-
-            spriteBatch.Draw(collisionTexture, topLine, null, Color.Red, 0, Vector2.Zero, SpriteEffects.None, 1);
-            spriteBatch.Draw(collisionTexture, bottom, null, Color.Red, 0, Vector2.Zero, SpriteEffects.None, 1);
-            spriteBatch.Draw(collisionTexture, right, null, Color.Red, 0, Vector2.Zero, SpriteEffects.None, 1);
-            spriteBatch.Draw(collisionTexture, leftL, null, Color.Red, 0, Vector2.Zero, SpriteEffects.None, 1);
-
-        }
 
         protected override void Draw(GameTime gameTime)
         {
@@ -108,10 +92,6 @@ namespace semester_1
             foreach (var item in gameObjects)
             {
                 item.Draw(spriteBatch);
-
-#if DEBUG
-                DrawCollisonBox(item);
-#endif
             }
             spriteBatch.End();
 
