@@ -11,9 +11,9 @@ namespace semester_1
         private SpriteBatch spriteBatch;
 
         List<GameObject> gameObjects = new List<GameObject>();
+        private static List<GameObject> deleteObjects;
 
 
-        private Texture2D collisionTexture;
 
         //Level
         private LevelManager levels = new LevelManager();
@@ -29,12 +29,22 @@ namespace semester_1
             IsMouseVisible = true;
         }
 
+
+
+        public static void Del(GameObject item)
+        {
+            deleteObjects.Add(item);
+
+
+        }
+
+
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
 
             gameObjects = new List<GameObject>();
-
+            deleteObjects = new List<GameObject>();
 
 
             gameObjects.Add(new Player());
@@ -55,7 +65,6 @@ namespace semester_1
             }
 
 
-            collisionTexture = Content.Load<Texture2D>("CollisionTexture");
             // TODO: use this.Content to load your game content here
         }
 
@@ -65,14 +74,20 @@ namespace semester_1
                 Exit();
 
 
+            //gameObjects.AddRange(newObjects);
+            //newObjects.Clear();
 
-
-            foreach (var item in gameObjects)
+            foreach (GameObject item in gameObjects)
             {
                 item.Update(gameTime);
-
             }
 
+
+            foreach (GameObject item in deleteObjects)
+            {
+                gameObjects.Remove(item);
+            }
+            deleteObjects.Clear();
 
 
 

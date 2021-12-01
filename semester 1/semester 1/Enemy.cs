@@ -23,7 +23,7 @@ namespace semester_1
 
         public override void Update(GameTime gameTime)
         {
-            Ami(gameTime);
+           
         }
     }
 }

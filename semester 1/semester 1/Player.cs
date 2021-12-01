@@ -11,9 +11,9 @@ namespace semester_1
     {
 
         private int healthPlayer;
-        private Texture2D[] animations;
+
         private KeyboardState keyboard;
-        private Vector2 playerInput;
+    
 
         public Player()
         {
@@ -27,9 +27,23 @@ namespace semester_1
             // Set a default timer value.
             timer = 0;
             // Set an initial threshold of 250ms, you can change this to alter the speed of the animation (lower number = faster animation).
-            threshold = 250;
+            threshold = 150;
 
-            animation = new Texture2D[4];
+
+            sourceRectanglesMelee = new Rectangle[12];
+            sourceRectanglesMelee[0] = new Rectangle(48, 0, 48, 128);
+            sourceRectanglesMelee[1] = new Rectangle(48, 0, 48, 128);
+            sourceRectanglesMelee[2] = new Rectangle(48, 0, 48, 128);
+            sourceRectanglesMelee[3] = new Rectangle(48, 0, 48, 128);
+            sourceRectanglesMelee[4] = new Rectangle(611, 0, 48, 128);
+            sourceRectanglesMelee[5] = new Rectangle(611, 0, 48, 128);
+            sourceRectanglesMelee[6] = new Rectangle(611, 0, 48, 128);
+            sourceRectanglesMelee[7] = new Rectangle(611, 0, 48, 128);
+            sourceRectanglesMelee[8] = new Rectangle(611, 0, 48, 128);
+            sourceRectanglesMelee[9] = new Rectangle(611, 0, 48, 128);
+            sourceRectanglesMelee[10] = new Rectangle(611, 0, 48, 128);
+            sourceRectanglesMelee[11] = new Rectangle(611, 0, 48, 128);
+
 
             sourceRectangles = new Rectangle[12];
             sourceRectangles[0] = new Rectangle(48, 0, 48, 128);
@@ -48,12 +62,12 @@ namespace semester_1
             previousAnimationIndex = 2;
             currentAnimationIndex = 1;
 
-            animations[0] = content.Load<Texture2D>("spr_ArcherIdle_strip_NoBkg");
-            // Set the draw position.
-            position = new Vector2(100, 100);
+            animationsIdle = content.Load<Texture2D>("spr_ArcherJumpAndFall_strip_NoBkg");
+            animationsMelee = content.Load<Texture2D>("spr_ArcherMelee_strip_NoBkg");
 
 
-            sprite = animations[0];
+
+
 
             // health Player
 
@@ -66,28 +80,29 @@ namespace semester_1
         private void Input(GameTime gameTime)
         {
             keyboard = Keyboard.GetState();
-            playerInput = Vector2.Zero;
+  
 
             //Input
             if (keyboard.IsKeyDown(Keys.D))
             {
-                playerInput = new Vector2(1, 0);
-                animations = animationsRight;
+                tjek = true;
+
+
             }
             else if (keyboard.IsKeyDown(Keys.A))
             {
-                playerInput = new Vector2(-1, 0);
-                animations = animationsLeft;
+               
+               
             }
             else if (keyboard.IsKeyDown(Keys.W))
             {
-                playerInput = new Vector2(0, -1);
-                animations = animationsUp;
+               
+                
             }
             else if (keyboard.IsKeyDown(Keys.S))
             {
-                playerInput = new Vector2(0, 1);
-                animations = animationsDown;
+                
+                
             }
 
 
@@ -99,8 +114,42 @@ namespace semester_1
 
         public override void Update(GameTime gameTime)
         {
+            
+         Input(gameTime);   
+            // Check if the timer has exceeded the threshold.
+            if (timer > threshold)
+            {
+                // If Alex is in the middle sprite of the animation.
+                if (currentAnimationIndex == 1)
+                {
+                    // If the previous animation was the left-side sprite, then the next animation should be the right-side sprite.
+                    if (previousAnimationIndex == 0)
+                    {
+                        currentAnimationIndex = 2;
+                    }
+                    else
+                    // If not, then the next animation should be the left-side sprite.
+                    {
+                        currentAnimationIndex = 0;
+                    }
+                    // Track the animation.
+                    previousAnimationIndex = currentAnimationIndex;
+                }
+                // If Alex was not in the middle sprite of the animation, he should return to the middle sprite.
+                else
+                {
+                    currentAnimationIndex = 1;
+                }
+                // Reset the timer.
+                timer = 0;
+            }
+            // If the timer has not reached the threshold, then add the milliseconds that have past since the last Update() to the timer.
+            else
+            {
+                timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            }
 
-            Ami(gameTime);
+           
 
 
         }

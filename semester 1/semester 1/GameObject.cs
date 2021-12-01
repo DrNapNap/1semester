@@ -26,7 +26,11 @@ namespace semester_1
         protected byte previousAnimationIndex;
         protected byte currentAnimationIndex;
 
-        protected Rectangle[] sourceRectangles;
+        public Texture2D animationsIdle;
+        public Texture2D animationsMelee;
+
+        public Rectangle[] sourceRectangles;
+        public Rectangle[] sourceRectanglesMelee;
 
         //Rendering
         public float layerDepth;
@@ -34,6 +38,11 @@ namespace semester_1
         public Rectangle rectangle;
 
         protected int health ;
+
+        public bool tjek;
+
+
+
 
         protected GameObject()
         {
@@ -46,53 +55,30 @@ namespace semester_1
         public abstract void LoadContent(ContentManager content);
 
 
-        public void Draw(SpriteBatch spriteBatch )
+        public void Draw(SpriteBatch spriteBatch)
         {
 
 
-
-            spriteBatch.Draw(sprite, new Vector2(100, 100), sourceRectangles[currentAnimationIndex], Color.White);
-
-
-        }
-
-
-        public void Ami(GameTime gameTime)
-        {
-            // Check if the timer has exceeded the threshold.
-            if (timer > threshold)
+            if (tjek == true)
             {
-                // If Alex is in the middle sprite of the animation.
-                if (currentAnimationIndex == 1)
-                {
-                    // If the previous animation was the left-side sprite, then the next animation should be the right-side sprite.
-                    if (previousAnimationIndex == 0)
-                    {
-                        currentAnimationIndex = 2;
-                    }
-                    else
-                    // If not, then the next animation should be the left-side sprite.
-                    {
-                        currentAnimationIndex = 0;
-                    }
-                    // Track the animation.
-                    previousAnimationIndex = currentAnimationIndex;
-                }
-                // If Alex was not in the middle sprite of the animation, he should return to the middle sprite.
-                else
-                {
-                    currentAnimationIndex = 1;
-                }
-                // Reset the timer.
-                timer = 0;
+
+                spriteBatch.Draw(animationsMelee, new Vector2(100, 100), sourceRectanglesMelee[currentAnimationIndex], Color.White);
+                
             }
-            // If the timer has not reached the threshold, then add the milliseconds that have past since the last Update() to the timer.
             else
             {
-                timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                spriteBatch.Draw(animationsIdle, new Vector2(100, 100), sourceRectangles[currentAnimationIndex], Color.White);
+
+                spriteBatch.GraphicsDevice.Clear(Color.Black);
+
             }
 
+
+
+
         }
+
+
 
     }
 }
