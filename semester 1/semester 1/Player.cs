@@ -9,10 +9,18 @@ namespace semester_1
 {
     internal  class Player : GameObject
     {
-        
+        private float xPos;
+        private float yPos;
+        private int healthPlayer;
 
+        public Player(float xPos, float yPos)
+        {
+            this.xPos = xPos;
+            this.yPos = yPos;
 
+            this.healthPlayer = health;
 
+        }
 
         public override void LoadContent(ContentManager content)
         {
@@ -41,6 +49,12 @@ namespace semester_1
             sprite = content.Load<Texture2D>("spr_ArcherIdle_strip_NoBkg");
             // Set the draw position.
             position = new Vector2(100, 100);
+
+
+            // health Player
+
+
+
 
         }
 

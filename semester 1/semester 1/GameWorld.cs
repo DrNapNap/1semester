@@ -15,6 +15,14 @@ namespace semester_1
 
         private Texture2D collisionTexture;
 
+        //Level
+        private LevelManager levels = new LevelManager();
+
+        //Gameobjcts
+        private GameObjectManager objectManeger = GameObjectManager.Instance;
+        private float xPos;
+        private float yPos;
+
         public GameWorld()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -30,7 +38,7 @@ namespace semester_1
 
 
 
-            gameObjects.Add(new Player());
+            gameObjects.Add(new Player(xPos,yPos));
 
 
             base.Initialize();

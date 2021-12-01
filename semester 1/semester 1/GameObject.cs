@@ -33,11 +33,14 @@ namespace semester_1
         protected SpriteEffects effect;
         public Rectangle rectangle;
 
+        protected int health ;
+
+
         public Rectangle CollisionBox { get; internal set; }
 
         protected GameObject()
         {
-  
+            health = 100;
         }
 
 
