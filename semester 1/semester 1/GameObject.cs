@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-
 namespace semester_1
 {
     public abstract class GameObject
@@ -14,12 +13,12 @@ namespace semester_1
 
         protected Vector2 Origen;
 
-        protected Texture2D sprite;
+        public Texture2D sprite;
 
         // A timer that stores milliseconds.
-        protected float timer;
+        public float timer;
         // An int that is the threshold for the timer.
-        protected int threshold;
+        public int threshold;
         // A Rectangle array that stores sourceRectangles for animations.
 
         // These bytes tell the spriteBatch.Draw() what sourceRectangle to display.
@@ -41,7 +40,18 @@ namespace semester_1
 
         public bool tjekAnimationsMelee;
 
-        private float scale = 2.101f;
+
+
+
+        
+        protected Texture2D archerIdle;
+        protected Texture2D archer;
+        protected Texture2D archer2;
+
+
+        public ArcherSprite archerSprite;
+
+
 
 
         protected GameObject()
@@ -58,22 +68,7 @@ namespace semester_1
         public void Draw(SpriteBatch spriteBatch)
         {
 
-
-            if (tjekAnimationsMelee == true)
-            {
-
-                spriteBatch.Draw(animationsMelee, new Vector2(100, 100), sourceRectanglesMelee[currentAnimationIndex], Color.White,0, Origen, scale ,effect,0);
-                
-            }
-            else
-            {
-                spriteBatch.Draw(animationsIdle, new Vector2(100, 100), sourceRectangles[currentAnimationIndex], Color.White, 0, Origen, scale, effect, 0);
-
-              
-            }
-
-
-
+                archerSprite.Draw(spriteBatch, new Vector2(100, 300));
 
         }
 

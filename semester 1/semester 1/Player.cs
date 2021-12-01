@@ -13,7 +13,8 @@ namespace semester_1
         private int healthPlayer;
 
         private KeyboardState keyboard;
-    
+
+
 
         public Player()
         {
@@ -24,55 +25,17 @@ namespace semester_1
 
         public override void LoadContent(ContentManager content)
         {
-            // Set a default timer value.
+
+
+
             timer = 0;
-            threshold = 250;
+            threshold = 100;
 
+            archerIdle = content.Load<Texture2D>("spr_ArcherIdle_strip_NoBkg");
+            archer = content.Load<Texture2D>("spr_ArcherAttack_strip_NoBkg");
+            archer2 = content.Load<Texture2D>("spr_ArcherMelee_strip_NoBkg");
 
-            sourceRectanglesMelee = new Rectangle[14];
-            sourceRectanglesMelee[0] = new Rectangle(48, 0, 48, 128);
-            sourceRectanglesMelee[1] = new Rectangle(48, 0, 48, 128);
-            sourceRectanglesMelee[2] = new Rectangle(561, 0, 48, 128);
-            sourceRectanglesMelee[3] = new Rectangle(561, 0, 48, 128);
-            sourceRectanglesMelee[4] = new Rectangle(561, 0, 48, 128);
-            sourceRectanglesMelee[5] = new Rectangle(561, 0, 48, 128);
-            sourceRectanglesMelee[6] = new Rectangle(561, 0, 48, 128);
-            sourceRectanglesMelee[7] = new Rectangle(561, 0, 48, 128);
-            sourceRectanglesMelee[8] = new Rectangle(561, 0, 48, 128);
-            sourceRectanglesMelee[9] = new Rectangle(561, 0, 48, 128);
-            sourceRectanglesMelee[10] = new Rectangle(561, 0, 48, 128);
-            sourceRectanglesMelee[11] = new Rectangle(561, 0, 48, 128);
-            sourceRectanglesMelee[12] = new Rectangle(561, 0, 48, 128);
-            sourceRectanglesMelee[13] = new Rectangle(561, 0, 48, 128);
-
-
-            
-
-
-
-            sourceRectangles = new Rectangle[12];
-            sourceRectangles[0] = new Rectangle(48, 0, 48, 128);
-            sourceRectangles[1] = new Rectangle(48, 0, 48, 128);
-            sourceRectangles[2] = new Rectangle(48, 0, 48, 128);
-            sourceRectangles[3] = new Rectangle(48, 0, 48, 128);
-            sourceRectangles[4] = new Rectangle(203, 0, 48, 128);
-            sourceRectangles[5] = new Rectangle(203, 0, 48, 128);
-            sourceRectangles[6] = new Rectangle(332, 0, 48, 128);
-            sourceRectangles[7] = new Rectangle(332, 0, 48, 128);
-            sourceRectangles[8] = new Rectangle(332, 0, 48, 128);
-            sourceRectangles[9] = new Rectangle(332, 0, 48, 128);
-            sourceRectangles[10] = new Rectangle(332, 0, 48, 128);
-            sourceRectangles[11] = new Rectangle(332, 0, 48, 128);
-            // This tells the animation to start on the left-side sprite.
-            previousAnimationIndex = 2;
-            currentAnimationIndex = 1;
-
-            animationsIdle = content.Load<Texture2D>("spr_ArcherJumpAndFall_strip_NoBkg");
-            animationsMelee = content.Load<Texture2D>("spr_ArcherMelee_strip_NoBkg");
-
-
-
-
+            archerSprite = new ArcherSprite(archerIdle, 1, 8);
 
             // health Player
 
@@ -90,24 +53,24 @@ namespace semester_1
             //Input
             if (keyboard.IsKeyDown(Keys.Q))
             {
-                tjekAnimationsMelee = true;
-
+                
+                archerSprite = new ArcherSprite(archer, 1, 14);
 
             }
             else if (keyboard.IsKeyDown(Keys.W))
             {
-               
-               
+                archerSprite = new ArcherSprite(archer2, 1, 28);
+
             }
             else if (keyboard.IsKeyDown(Keys.E))
             {
-               
-                
+                archerSprite = new ArcherSprite(archer, 1, 14);
+
             }
             else if (keyboard.IsKeyDown(Keys.R))
             {
-                
-                
+                archerSprite = new ArcherSprite(archer2, 1, 28);
+
             }
 
 
@@ -120,42 +83,17 @@ namespace semester_1
         public override void Update(GameTime gameTime)
         {
             
-         Input(gameTime);   
-            // Check if the timer has exceeded the threshold.
+         Input(gameTime);
+
             if (timer > threshold)
             {
-                // If Alex is in the middle sprite of the animation.
-                if (currentAnimationIndex == 1)
-                {
-                    // If the previous animation was the left-side sprite, then the next animation should be the right-side sprite.
-                    if (previousAnimationIndex == 0)
-                    {
-                        currentAnimationIndex = 2;
-                    }
-                    else
-                    // If not, then the next animation should be the left-side sprite.
-                    {
-                        currentAnimationIndex = 0;
-                    }
-                    // Track the animation.
-                    previousAnimationIndex = currentAnimationIndex;
-                }
-                // If Alex was not in the middle sprite of the animation, he should return to the middle sprite.
-                else
-                {
-                    currentAnimationIndex = 1;
-                }
-                // Reset the timer.
+                archerSprite.Update();
                 timer = 0;
             }
-            // If the timer has not reached the threshold, then add the milliseconds that have past since the last Update() to the timer.
             else
             {
                 timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             }
-
-           
-
 
         }
     }

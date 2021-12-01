@@ -87,3 +87,4 @@ C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcorea
 C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\spr_ArcherMelee_strip_WithBkg.xnb
 C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\spr_ArcherRun_strip_NoBkg.xnb
 C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\spr_ArcherRun_strip_WithBkg.xnb
+C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\spr_ArcherIdle_strip_NoBkg.xnb
