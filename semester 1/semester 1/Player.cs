@@ -1,9 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.Xna.Framework.Input;
+
 
 namespace semester_1
 {
@@ -11,6 +11,9 @@ namespace semester_1
     {
 
         private int healthPlayer;
+        private Texture2D[] animations;
+        private KeyboardState keyboard;
+        private Vector2 playerInput;
 
         public Player()
         {
@@ -25,7 +28,9 @@ namespace semester_1
             timer = 0;
             // Set an initial threshold of 250ms, you can change this to alter the speed of the animation (lower number = faster animation).
             threshold = 250;
-          
+
+            animation = new Texture2D[4];
+
             sourceRectangles = new Rectangle[12];
             sourceRectangles[0] = new Rectangle(48, 0, 48, 128);
             sourceRectangles[1] = new Rectangle(48, 0, 48, 128);
@@ -43,10 +48,12 @@ namespace semester_1
             previousAnimationIndex = 2;
             currentAnimationIndex = 1;
 
-            sprite = content.Load<Texture2D>("spr_ArcherIdle_strip_NoBkg");
+            animations[0] = content.Load<Texture2D>("spr_ArcherIdle_strip_NoBkg");
             // Set the draw position.
             position = new Vector2(100, 100);
 
+
+            sprite = animations[0];
 
             // health Player
 
@@ -56,6 +63,37 @@ namespace semester_1
         }
 
 
+        private void Input(GameTime gameTime)
+        {
+            keyboard = Keyboard.GetState();
+            playerInput = Vector2.Zero;
+
+            //Input
+            if (keyboard.IsKeyDown(Keys.D))
+            {
+                playerInput = new Vector2(1, 0);
+                animations = animationsRight;
+            }
+            else if (keyboard.IsKeyDown(Keys.A))
+            {
+                playerInput = new Vector2(-1, 0);
+                animations = animationsLeft;
+            }
+            else if (keyboard.IsKeyDown(Keys.W))
+            {
+                playerInput = new Vector2(0, -1);
+                animations = animationsUp;
+            }
+            else if (keyboard.IsKeyDown(Keys.S))
+            {
+                playerInput = new Vector2(0, 1);
+                animations = animationsDown;
+            }
+
+
+
+
+        }
 
 
 
