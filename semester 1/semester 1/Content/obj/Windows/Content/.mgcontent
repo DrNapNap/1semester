@@ -4,10 +4,10 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/nap/Documents/GitHub/1semester/1semester/semester 1/semester 1/Content/charaset.png</File>
-    <File>C:/Users/nap/Documents/GitHub/1semester/1semester/semester 1/semester 1/Content/CollisionTexture.png</File>
-    <File>C:/Users/nap/Documents/GitHub/1semester/1semester/semester 1/semester 1/Content/spr_ArcherIdle_strip_NoBkg.png</File>
-    <File>C:/Users/nap/Documents/GitHub/1semester/1semester/semester 1/semester 1/Content/spr_ArcherIdle_strip_WithBkg.png</File>
+    <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/charaset.png</File>
+    <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/CollisionTexture.png</File>
+    <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/spr_ArcherIdle_strip_NoBkg.png</File>
+    <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/spr_ArcherIdle_strip_WithBkg.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

@@ -31,7 +31,6 @@ C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\obj\Debug\netcorea
 C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\obj\Debug\netcoreapp3.1\semester 1.AssemblyInfoInputs.cache
 C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\obj\Debug\netcoreapp3.1\semester 1.AssemblyInfo.cs
 C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\obj\Debug\netcoreapp3.1\semester 1.csproj.CoreCompileInputs.cache
-C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\obj\Debug\netcoreapp3.1\semester 1.csproj.CopyComplete
 C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\obj\Debug\netcoreapp3.1\semester 1.dll
 C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\obj\Debug\netcoreapp3.1\semester 1.pdb
 C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\obj\Debug\netcoreapp3.1\semester 1.genruntimeconfig.cache
@@ -75,3 +74,7 @@ C:\Users\nap\Documents\GitHub\1semester\1semester\semester 1\semester 1\bin\Debu
 C:\Users\nap\Documents\GitHub\1semester\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\CollisionTexture.xnb
 C:\Users\nap\Documents\GitHub\1semester\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\charaset.xnb
 C:\Users\nap\Documents\GitHub\1semester\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\spr_ArcherIdle_strip_WithBkg.xnb
+C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\charaset.xnb
+C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\CollisionTexture.xnb
+C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\spr_ArcherIdle_strip_NoBkg.xnb
+C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\spr_ArcherIdle_strip_WithBkg.xnb
