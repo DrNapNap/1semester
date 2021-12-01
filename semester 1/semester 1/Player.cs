@@ -26,23 +26,28 @@ namespace semester_1
         {
             // Set a default timer value.
             timer = 0;
-            // Set an initial threshold of 250ms, you can change this to alter the speed of the animation (lower number = faster animation).
-            threshold = 150;
+            threshold = 250;
 
 
-            sourceRectanglesMelee = new Rectangle[12];
+            sourceRectanglesMelee = new Rectangle[14];
             sourceRectanglesMelee[0] = new Rectangle(48, 0, 48, 128);
             sourceRectanglesMelee[1] = new Rectangle(48, 0, 48, 128);
-            sourceRectanglesMelee[2] = new Rectangle(48, 0, 48, 128);
-            sourceRectanglesMelee[3] = new Rectangle(48, 0, 48, 128);
-            sourceRectanglesMelee[4] = new Rectangle(611, 0, 48, 128);
-            sourceRectanglesMelee[5] = new Rectangle(611, 0, 48, 128);
-            sourceRectanglesMelee[6] = new Rectangle(611, 0, 48, 128);
-            sourceRectanglesMelee[7] = new Rectangle(611, 0, 48, 128);
-            sourceRectanglesMelee[8] = new Rectangle(611, 0, 48, 128);
-            sourceRectanglesMelee[9] = new Rectangle(611, 0, 48, 128);
-            sourceRectanglesMelee[10] = new Rectangle(611, 0, 48, 128);
-            sourceRectanglesMelee[11] = new Rectangle(611, 0, 48, 128);
+            sourceRectanglesMelee[2] = new Rectangle(561, 0, 48, 128);
+            sourceRectanglesMelee[3] = new Rectangle(561, 0, 48, 128);
+            sourceRectanglesMelee[4] = new Rectangle(561, 0, 48, 128);
+            sourceRectanglesMelee[5] = new Rectangle(561, 0, 48, 128);
+            sourceRectanglesMelee[6] = new Rectangle(561, 0, 48, 128);
+            sourceRectanglesMelee[7] = new Rectangle(561, 0, 48, 128);
+            sourceRectanglesMelee[8] = new Rectangle(561, 0, 48, 128);
+            sourceRectanglesMelee[9] = new Rectangle(561, 0, 48, 128);
+            sourceRectanglesMelee[10] = new Rectangle(561, 0, 48, 128);
+            sourceRectanglesMelee[11] = new Rectangle(561, 0, 48, 128);
+            sourceRectanglesMelee[12] = new Rectangle(561, 0, 48, 128);
+            sourceRectanglesMelee[13] = new Rectangle(561, 0, 48, 128);
+
+
+            
+
 
 
             sourceRectangles = new Rectangle[12];
@@ -83,23 +88,23 @@ namespace semester_1
   
 
             //Input
-            if (keyboard.IsKeyDown(Keys.D))
+            if (keyboard.IsKeyDown(Keys.Q))
             {
-                tjek = true;
+                tjekAnimationsMelee = true;
 
 
-            }
-            else if (keyboard.IsKeyDown(Keys.A))
-            {
-               
-               
             }
             else if (keyboard.IsKeyDown(Keys.W))
             {
                
+               
+            }
+            else if (keyboard.IsKeyDown(Keys.E))
+            {
+               
                 
             }
-            else if (keyboard.IsKeyDown(Keys.S))
+            else if (keyboard.IsKeyDown(Keys.R))
             {
                 
                 

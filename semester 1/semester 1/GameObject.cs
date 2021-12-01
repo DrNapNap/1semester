@@ -10,7 +10,7 @@ namespace semester_1
         //Transform
         public Vector2 position;
         public float rotaton;
-        public Vector2 scale = Vector2.One;
+      
 
         protected Vector2 Origen;
 
@@ -39,9 +39,9 @@ namespace semester_1
 
         protected int health ;
 
-        public bool tjek;
+        public bool tjekAnimationsMelee;
 
-
+        private float scale = 2.101f;
 
 
         protected GameObject()
@@ -59,18 +59,17 @@ namespace semester_1
         {
 
 
-            if (tjek == true)
+            if (tjekAnimationsMelee == true)
             {
 
-                spriteBatch.Draw(animationsMelee, new Vector2(100, 100), sourceRectanglesMelee[currentAnimationIndex], Color.White);
+                spriteBatch.Draw(animationsMelee, new Vector2(100, 100), sourceRectanglesMelee[currentAnimationIndex], Color.White,0, Origen, scale ,effect,0);
                 
             }
             else
             {
-                spriteBatch.Draw(animationsIdle, new Vector2(100, 100), sourceRectangles[currentAnimationIndex], Color.White);
+                spriteBatch.Draw(animationsIdle, new Vector2(100, 100), sourceRectangles[currentAnimationIndex], Color.White, 0, Origen, scale, effect, 0);
 
-                spriteBatch.GraphicsDevice.Clear(Color.Black);
-
+              
             }
 
 
