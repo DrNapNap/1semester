@@ -6,6 +6,7 @@
   <SourceFiles>
     <File>C:/Users/nap/Documents/GitHub/1semester/1semester/semester 1/semester 1/Content/../../../../../../../Pictures/spr_ArcherIdle_strip_NoBkg.png</File>
     <File>C:/Users/nap/Documents/GitHub/1semester/1semester/semester 1/semester 1/Content/../../../../../../../Pictures/spr_ArcherIdle_strip_WithBkg.png</File>
+    <File>C:/Users/nap/Documents/GitHub/1semester/1semester/semester 1/semester 1/Content/File.spritefont</File>
     <File>C:/Users/nap/Documents/GitHub/1semester/1semester/semester 1/semester 1/Content/spr_ArcherAttack_strip_NoBkg.png</File>
     <File>C:/Users/nap/Documents/GitHub/1semester/1semester/semester 1/semester 1/Content/spr_ArcherAttack_strip_WithBkg.png</File>
     <File>C:/Users/nap/Documents/GitHub/1semester/1semester/semester 1/semester 1/Content/spr_ArcherDash_strip_NoBkg.png</File>
@@ -22,6 +23,7 @@
   <DestFiles>
     <File>spr_ArcherIdle_strip_NoBkg.png</File>
     <File>spr_ArcherIdle_strip_WithBkg.png</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
