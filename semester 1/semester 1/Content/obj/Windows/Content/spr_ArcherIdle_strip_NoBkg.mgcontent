@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/nap/Documents/GitHub/1semester/1semester/semester 1/semester 1/Content/spr_ArcherIdle_strip_NoBkg.png</SourceFile>
-  <SourceTime>2021-11-29T10:25:10.9196694+01:00</SourceTime>
-  <DestFile>C:/Users/nap/Documents/GitHub/1semester/1semester/semester 1/semester 1/Content/bin/Windows/Content/spr_ArcherIdle_strip_NoBkg.xnb</DestFile>
-  <DestTime>2021-11-29T10:27:35.2663982+01:00</DestTime>
+  <SourceFile>C:/Users/marcb/OneDrive/Dokumenter/GitHub/1semester/semester 1/semester 1/Content/spr_ArcherIdle_strip_NoBkg.png</SourceFile>
+  <SourceTime>2021-11-29T12:41:07.1695291+01:00</SourceTime>
+  <DestFile>C:/Users/marcb/OneDrive/Dokumenter/GitHub/1semester/semester 1/semester 1/Content/bin/Windows/Content/spr_ArcherIdle_strip_NoBkg.xnb</DestFile>
+  <DestTime>2021-11-29T12:42:19.2752317+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T18:17:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

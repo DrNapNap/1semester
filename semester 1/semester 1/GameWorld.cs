@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using TextureAtlas;
 
 namespace semester_1
 {
@@ -10,11 +11,16 @@ namespace semester_1
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
 
+        private float timer;
+        private int threshold;
+
         List<GameObject> gameObjects = new List<GameObject>();
 
+        private Texture2D archer;
 
         private Texture2D collisionTexture;
 
+        private ArcherSprite archerSprite;
         public GameWorld()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -28,9 +34,7 @@ namespace semester_1
 
             gameObjects = new List<GameObject>();
 
-
-
-            gameObjects.Add(new Player());
+            //gameObjects.Add(new Player());
 
 
             base.Initialize();
@@ -40,7 +44,12 @@ namespace semester_1
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            timer = 0;
+            threshold = 100;
 
+            archer = Content.Load<Texture2D>("idleArcher");
+
+            archerSprite = new ArcherSprite(archer, 1, 8); 
             foreach (var item in gameObjects)
             {
                 item.LoadContent(this.Content);
@@ -57,7 +66,15 @@ namespace semester_1
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-
+            if (timer > threshold)
+            {
+                archerSprite.Update();
+                timer = 0;
+            }
+            else
+            {
+                timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            }
 
 
             foreach (var item in gameObjects)
@@ -97,6 +114,7 @@ namespace semester_1
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
+            archerSprite.Draw(spriteBatch, new Vector2(20, 20));
             foreach (var item in gameObjects)
             {
                 item.Draw(spriteBatch);

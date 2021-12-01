@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nap\\Documents\\GitHub\\1semester\\1semester\\semester 1\\semester 1\\semester 1.csproj": {}
+    "C:\\Users\\marcb\\OneDrive\\Dokumenter\\GitHub\\1semester\\semester 1\\semester 1\\semester 1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nap\\Documents\\GitHub\\1semester\\1semester\\semester 1\\semester 1\\semester 1.csproj": {
+    "C:\\Users\\marcb\\OneDrive\\Dokumenter\\GitHub\\1semester\\semester 1\\semester 1\\semester 1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nap\\Documents\\GitHub\\1semester\\1semester\\semester 1\\semester 1\\semester 1.csproj",
+        "projectUniqueName": "C:\\Users\\marcb\\OneDrive\\Dokumenter\\GitHub\\1semester\\semester 1\\semester 1\\semester 1.csproj",
         "projectName": "semester 1",
-        "projectPath": "C:\\Users\\nap\\Documents\\GitHub\\1semester\\1semester\\semester 1\\semester 1\\semester 1.csproj",
-        "packagesPath": "C:\\Users\\nap\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nap\\Documents\\GitHub\\1semester\\1semester\\semester 1\\semester 1\\obj\\",
+        "projectPath": "C:\\Users\\marcb\\OneDrive\\Dokumenter\\GitHub\\1semester\\semester 1\\semester 1\\semester 1.csproj",
+        "packagesPath": "C:\\Users\\marcb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marcb\\OneDrive\\Dokumenter\\GitHub\\1semester\\semester 1\\semester 1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\nap\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\marcb\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -65,12 +65,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.21, 3.1.21]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -79,7 +73,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

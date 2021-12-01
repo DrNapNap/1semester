@@ -12,14 +12,14 @@ namespace semester_1
         public float rotaton;
         public Vector2 scale = Vector2.One;
 
-        protected Vector2 Origen;
+        protected Vector2 Origin;
 
-        protected Texture2D sprite;
+        public Texture2D sprite;
 
         // A timer that stores milliseconds.
-        protected float timer;
+        public float timer;
         // An int that is the threshold for the timer.
-        protected int threshold;
+        public int threshold;
         // A Rectangle array that stores sourceRectangles for animations.
 
         // These bytes tell the spriteBatch.Draw() what sourceRectangle to display.
@@ -48,12 +48,7 @@ namespace semester_1
 
         public void Draw(SpriteBatch spriteBatch )
         {
-
-
-
             spriteBatch.Draw(sprite, new Vector2(100, 100), sourceRectangles[currentAnimationIndex], Color.White);
-
-
         }
 
     }
