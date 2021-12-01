@@ -46,8 +46,9 @@ namespace semester_1
             gameObjects = new List<GameObject>();
             deleteObjects = new List<GameObject>();
 
-
             gameObjects.Add(new Player());
+
+
 
 
             base.Initialize();
@@ -63,6 +64,8 @@ namespace semester_1
                 item.LoadContent(this.Content);
 
             }
+
+
 
 
             // TODO: use this.Content to load your game content here
