@@ -4,9 +4,33 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/mads/OneDrive/Dokumenter/GitHub/1semester/semester 1/semester 1/Content/text.spritefont</File>
+    <File>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/File.spritefont</File>
+    <File>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/spr_ArcherAttack_strip_NoBkg.png</File>
+    <File>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/spr_ArcherAttack_strip_WithBkg.png</File>
+    <File>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/spr_ArcherDash_strip_NoBkg.png</File>
+    <File>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/spr_ArcherDash_strip_WithBkg.png</File>
+    <File>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/spr_ArcherDeath_strip_NoBkg.png</File>
+    <File>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/spr_ArcherDeath_strip_WithBkg.png</File>
+    <File>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/spr_ArcherJumpAndFall_strip_NoBkg.png</File>
+    <File>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/spr_ArcherJumpAndFall_strip_WithBKg.png</File>
+    <File>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/spr_ArcherMelee_strip_NoBkg.png</File>
+    <File>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/spr_ArcherMelee_strip_WithBkg.png</File>
+    <File>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/spr_ArcherRun_strip_NoBkg.png</File>
+    <File>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/spr_ArcherRun_strip_WithBkg.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

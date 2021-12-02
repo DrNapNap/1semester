@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/mads/OneDrive/Dokumenter/GitHub/1semester/semester 1/semester 1/Content/text.spritefont</SourceFile>
-  <SourceTime>2021-11-29T10:19:18.5566017+01:00</SourceTime>
-  <DestFile>C:/Users/mads/OneDrive/Dokumenter/GitHub/1semester/semester 1/semester 1/Content/bin/Windows/Content/text.xnb</DestFile>
-  <DestTime>2021-11-29T14:11:34.9146458+01:00</DestTime>
+  <SourceFile>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/File.spritefont</SourceFile>
+  <SourceTime>2021-12-01T11:43:58.5733494+01:00</SourceTime>
+  <DestFile>C:/Users/mads/Documents/1semester/semester 1/semester 1/Content/bin/Windows/Content/File.xnb</DestFile>
+  <DestTime>2021-12-01T13:58:50.5504566+01:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
-  <ImporterTime>2020-08-10T18:17:54+02:00</ImporterTime>
+  <ImporterTime>2020-08-10T16:17:54+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
-  <ProcessorTime>2020-08-10T18:17:54+02:00</ProcessorTime>
+  <ProcessorTime>2020-08-10T16:17:54+02:00</ProcessorTime>
   <Parameters>
     <Key>PremultiplyAlpha</Key>
     <Value>True</Value>

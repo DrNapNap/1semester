@@ -10,63 +10,83 @@ namespace semester_1
         //Transform
         public Vector2 position;
         public float rotaton;
-        public Vector2 scale = Vector2.One;
-        protected Vector2 gridPosition;
+
+
+        protected Vector2 Origen;
+
+        protected Texture2D sprite;
+
+        // A timer that stores milliseconds.
+        protected float timer;
+        // An int that is the threshold for the timer.
+        protected int threshold;
+        // A Rectangle array that stores sourceRectangles for animations.
+
+        // These bytes tell the spriteBatch.Draw() what sourceRectangle to display.
+        protected byte previousAnimationIndex;
+        protected byte currentAnimationIndex;
+
+        public Texture2D animationsIdle;
+        public Texture2D animationsMelee;
+
+        public Rectangle[] sourceRectangles;
+        public Rectangle[] sourceRectanglesMelee;
 
         //Rendering
         public float layerDepth;
         protected SpriteEffects effect;
         public Rectangle rectangle;
 
-        //Animation
-        protected Texture2D sprite;
-        protected Texture2D[] animations;
-        protected float animationSpeed;
-        private float timeEapsed;
-        private int currenIndex;
+        protected int health;
+
+        public bool tjek;
+
+        private float scale = 2.101f;
+
+
+        public SpriteFont text;
+       
 
         protected GameObject()
         {
-
-      
+            health = 100;
         }
 
-        public Vector2 Origen
-        {
-            get
-            {
-                if (sprite != null)
-                {
-                    return new Vector2(sprite.Width / 2, sprite.Height / 2);
-                }
-                return Vector2.Zero;
-            }
-        }
-        public Texture2D Sprite { get => sprite; set => sprite = value; }
 
+
+
+        
 
         public abstract void Update(GameTime gameTime);
 
         public abstract void LoadContent(ContentManager content);
 
-        public virtual void Draw(SpriteBatch spriteBatch)
+
+        public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(sprite, rectangle, null, Color.White, rotaton, Origen, effect, layerDepth);
-        }
 
-        public virtual void Animate(GameTime gameTime)
-        {
-            timeEapsed += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            currenIndex = (int)(timeEapsed * animationSpeed);
-
-            if (currenIndex >= animations.Length)
+            if (tjek == true)
             {
-                timeEapsed = 0;
 
-                currenIndex = 0;
+                spriteBatch.Draw(animationsMelee, new Vector2(100, 100), sourceRectanglesMelee[currentAnimationIndex], Color.White, 0, Origen, scale, effect, 0);
+
             }
-            sprite = animations[currenIndex];
+            else
+            {
+                spriteBatch.Draw(animationsIdle, new Vector2(100, 100), sourceRectangles[currentAnimationIndex], Color.White, 0, Origen, scale, effect, 0);
+
+                spriteBatch.GraphicsDevice.Clear(Color.Black);
+
+                spriteBatch.DrawString(text, "Heatlh: " + health.ToString(), new Vector2(20, 20), Color.Red, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
+            }
+
+           
+
+
         }
+
+
+
     }
 }
