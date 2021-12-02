@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -7,13 +6,19 @@ using Microsoft.Xna.Framework.Input;
 
 namespace semester_1
 {
-    internal  class Player : GameObject
+    internal class Player : GameObject
     {
 
         private int healthPlayer;
 
         private KeyboardState keyboard;
+        private bool canFire = true;
 
+
+        public ArcherSprite archerSprite;
+        protected Texture2D archerIdle;
+        protected Texture2D archerd;
+        protected Texture2D archer2;
 
 
         public Player()
@@ -28,11 +33,11 @@ namespace semester_1
 
 
 
-            timer = 0;
-            threshold = 100;
+            timer = 510;
+            threshold = 50;
 
             archerIdle = content.Load<Texture2D>("spr_ArcherIdle_strip_NoBkg");
-            archer = content.Load<Texture2D>("spr_ArcherAttack_strip_NoBkg");
+            archerd = content.Load<Texture2D>("spr_ArcherAttack_strip_NoBkg");
             archer2 = content.Load<Texture2D>("spr_ArcherMelee_strip_NoBkg");
 
             archerSprite = new ArcherSprite(archerIdle, 1, 8);
@@ -48,30 +53,68 @@ namespace semester_1
         private void Input(GameTime gameTime)
         {
             keyboard = Keyboard.GetState();
-  
+
 
             //Input
+
+
             if (keyboard.IsKeyDown(Keys.Q))
             {
-                
-                archerSprite = new ArcherSprite(archer, 1, 14);
+                if (canFire == true)
+                {
+                    canFire = false;
+                    archerSprite = new ArcherSprite(archerd, 1, 14);
+                    playerTurn = false;
+                }
 
             }
             else if (keyboard.IsKeyDown(Keys.W))
             {
-                archerSprite = new ArcherSprite(archer2, 1, 28);
+                if (canFire == true)
+                {
 
+                    archerSprite = new ArcherSprite(archer2, 1, 28);
+                    canFire = false;
+                }
             }
             else if (keyboard.IsKeyDown(Keys.E))
             {
-                archerSprite = new ArcherSprite(archer, 1, 14);
+                if (canFire == true)
+                {
 
+                    archerSprite = new ArcherSprite(archerd, 1, 14);
+                    canFire = false;
+                }
             }
             else if (keyboard.IsKeyDown(Keys.R))
             {
-                archerSprite = new ArcherSprite(archer2, 1, 28);
+                if (canFire == true)
+                {
+canFire = false;
+                    archerSprite = new ArcherSprite(archer2, 1, 28);
+                    
 
+                }
             }
+
+            if (keyboard.IsKeyUp(Keys.Q))
+            {
+                canFire = true;
+            }
+            if (keyboard.IsKeyUp(Keys.W))
+            {
+                canFire = true;
+            }
+             if (keyboard.IsKeyUp(Keys.E))
+            {
+                canFire = true;
+            }
+             if (keyboard.IsKeyUp(Keys.R))
+            {
+                canFire = true;
+                
+            }
+
 
 
 
@@ -82,8 +125,8 @@ namespace semester_1
 
         public override void Update(GameTime gameTime)
         {
-            
-         Input(gameTime);
+
+            Input(gameTime);
 
             if (timer > threshold)
             {
@@ -94,6 +137,12 @@ namespace semester_1
             {
                 timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             }
+
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            archerSprite.Draw(spriteBatch, new Vector2(100, 300));
 
         }
     }

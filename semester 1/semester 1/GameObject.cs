@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
+
 namespace semester_1
 {
     public abstract class GameObject
@@ -9,7 +10,7 @@ namespace semester_1
         //Transform
         public Vector2 position;
         public float rotaton;
-      
+
 
         protected Vector2 Origen;
 
@@ -36,20 +37,12 @@ namespace semester_1
         protected SpriteEffects effect;
         public Rectangle rectangle;
 
-        protected int health ;
+        protected int health;
 
-        public bool tjekAnimationsMelee;
-
-
+        protected bool playerTurn;
 
 
-        
-        protected Texture2D archerIdle;
-        protected Texture2D archer;
-        protected Texture2D archer2;
 
-
-        public ArcherSprite archerSprite;
 
 
 
@@ -65,12 +58,13 @@ namespace semester_1
         public abstract void LoadContent(ContentManager content);
 
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
+        public abstract void Draw(SpriteBatch spriteBatch);
+     
 
-                archerSprite.Draw(spriteBatch, new Vector2(100, 300));
 
-        }
+          
+
+        
 
 
 

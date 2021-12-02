@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace semester_1
 {
-    public class ArcherSprite
+    public class HostileRunningReaper
     {
         private Texture2D Texture { get; set; }
         private int Rows { get; set; }
@@ -15,9 +16,9 @@ namespace semester_1
         private int currentFrame;
         private int totalFrames;
 
-        public ArcherSprite(Texture2D archer, int rows, int columns)
+        public HostileRunningReaper(Texture2D reaperIdle, int rows, int columns)
         {
-            Texture = archer;
+            Texture = reaperIdle;
             Rows = rows;
             Columns = columns;
             currentFrame = 0;

@@ -13,7 +13,7 @@ namespace semester_1
 
 
         List<GameObject> gameObjects = new List<GameObject>();
-
+ 
 
         public GameWorld()
         {
@@ -27,10 +27,12 @@ namespace semester_1
             // TODO: Add your initialization logic here
 
             gameObjects = new List<GameObject>();
+            
 
             gameObjects.Add(new Player());
+            gameObjects.Add(new Enemy());
 
-
+           
             base.Initialize();
         }
 
