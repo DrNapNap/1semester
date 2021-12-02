@@ -39,7 +39,19 @@ namespace semester_1
 
         protected int health;
 
-        protected bool playerTurn;
+        public int Health
+        {
+            get { return health = 100; }
+            set
+            {
+                if (value > 0 && value <= 100)
+                {
+                    health = value;
+                }
+            }
+        }
+
+        public bool playerTurn;
 
 
 

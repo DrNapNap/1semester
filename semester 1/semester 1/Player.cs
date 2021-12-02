@@ -57,68 +57,71 @@ namespace semester_1
 
             //Input
 
-
-            if (keyboard.IsKeyDown(Keys.Q))
+            if (playerTurn == true)
             {
-                if (canFire == true)
-                {
-                    canFire = false;
-                    archerSprite = new ArcherSprite(archerd, 1, 14);
-                    playerTurn = false;
-                }
 
-            }
-            else if (keyboard.IsKeyDown(Keys.W))
-            {
-                if (canFire == true)
-                {
 
-                    archerSprite = new ArcherSprite(archer2, 1, 28);
-                    canFire = false;
-                }
-            }
-            else if (keyboard.IsKeyDown(Keys.E))
-            {
-                if (canFire == true)
+                if (keyboard.IsKeyDown(Keys.Q))
                 {
-
-                    archerSprite = new ArcherSprite(archerd, 1, 14);
-                    canFire = false;
-                }
-            }
-            else if (keyboard.IsKeyDown(Keys.R))
-            {
-                if (canFire == true)
-                {
-canFire = false;
-                    archerSprite = new ArcherSprite(archer2, 1, 28);
-                    
+                    if (canFire == true)
+                    {
+                        canFire = false;
+                        archerSprite = new ArcherSprite(archerd, 1, 14);
+                      
+                    }
 
                 }
+                else if (keyboard.IsKeyDown(Keys.W))
+                {
+                    if (canFire == true)
+                    {
+
+                        archerSprite = new ArcherSprite(archer2, 1, 28);
+                        canFire = false;
+                    }
+                }
+                else if (keyboard.IsKeyDown(Keys.E))
+                {
+                    if (canFire == true)
+                    {
+
+                        archerSprite = new ArcherSprite(archerd, 1, 14);
+                        canFire = false;
+                    }
+                }
+                else if (keyboard.IsKeyDown(Keys.R))
+                {
+                    if (canFire == true)
+                    {
+                        canFire = false;
+                        archerSprite = new ArcherSprite(archer2, 1, 28);
+
+
+                    }
+                }
+
+                if (keyboard.IsKeyUp(Keys.Q))
+                {
+                    canFire = true;
+                }
+                if (keyboard.IsKeyUp(Keys.W))
+                {
+                    canFire = true;
+                }
+                if (keyboard.IsKeyUp(Keys.E))
+                {
+                    canFire = true;
+                }
+                if (keyboard.IsKeyUp(Keys.R))
+                {
+                    canFire = true;
+
+                }
+ playerTurn = false;
+
             }
 
-            if (keyboard.IsKeyUp(Keys.Q))
-            {
-                canFire = true;
-            }
-            if (keyboard.IsKeyUp(Keys.W))
-            {
-                canFire = true;
-            }
-             if (keyboard.IsKeyUp(Keys.E))
-            {
-                canFire = true;
-            }
-             if (keyboard.IsKeyUp(Keys.R))
-            {
-                canFire = true;
-                
-            }
-
-
-
-
-
+           
         }
 
 

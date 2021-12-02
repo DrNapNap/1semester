@@ -47,12 +47,12 @@ namespace semester_1
 
         public override void Update(GameTime gameTime)
         {
-            if (playerTurn == false)
+            if (playerTurn == false  )
             {
 
                 health -= 10;
 
-
+                playerTurn = true;
             }
 
 
