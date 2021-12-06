@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-
+using System;
 
 namespace semester_1
 {
@@ -28,9 +28,18 @@ namespace semester_1
 
 
         public Texture2D reaperIdle;
+        public Texture2D HolsterWeaponReaper;
 
-        public Rectangle[] sourceRectangles;
-        public Rectangle[] sourceRectanglesMelee;
+
+        public Texture2D HostileAttackReaper;
+        public Texture2D HostileIdleReaper;
+        public Texture2D HostileRunningReaper;
+
+
+        public HostileRunningReaper hostileRunning;
+
+
+
 
         //Rendering
         public float layerDepth;
@@ -66,7 +75,10 @@ namespace semester_1
 
 
 
-
+        public async System.Threading.Tasks.Task DelayTask(double Time)
+        {
+            await System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(Time));
+        }
 
 
 

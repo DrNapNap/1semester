@@ -8,17 +8,8 @@ namespace semester_1
 {
     public class Enemy : GameObject
     {
-        
 
 
-        protected HostileRunningReaper hostileRunning;
-        
-        protected Texture2D HostileAttackReaper;
-        protected Texture2D HostileIdleReaper;
-        protected Texture2D HolsterWeaponReaper;
-        protected Texture2D HostileRunningReaper;
-
-        
 
 
 
@@ -40,10 +31,13 @@ namespace semester_1
 
             reaperIdle = content.Load<Texture2D>("PassiveIdleReaper-Sheet");
 
+
             HostileAttackReaper = content.Load<Texture2D>("HostileAttackReaper-Sheet");
             HolsterWeaponReaper = content.Load<Texture2D>("HolsterWeaponReaper");
             HostileRunningReaper = content.Load<Texture2D>("PassiveRunningReaper-Sheet");
 
+       
+            
 
             hostileRunning = new HostileRunningReaper(reaperIdle, 1, 5);
 
@@ -58,7 +52,10 @@ namespace semester_1
 
         public override void Update(GameTime gameTime)
         {
-            
+
+
+
+
 
             if (timer > threshold)
             {

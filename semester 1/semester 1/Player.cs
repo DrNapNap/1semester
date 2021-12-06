@@ -20,7 +20,6 @@ namespace semester_1
         protected Texture2D archerIdle;
         protected Texture2D archerd;
         protected Texture2D archer2;
-        protected HostileRunningReaper hostileRunning;
 
 
         int counter = 1;
@@ -34,7 +33,7 @@ namespace semester_1
         {
             Health = 100;
             HealthEnemy = 100;
-            
+
         }
 
         public override void LoadContent(ContentManager content)
@@ -48,6 +47,10 @@ namespace semester_1
             archerIdle = content.Load<Texture2D>("spr_ArcherIdle_strip_NoBkg");
             archerd = content.Load<Texture2D>("spr_ArcherAttack_strip_NoBkg");
             archer2 = content.Load<Texture2D>("spr_ArcherMelee_strip_NoBkg");
+            HostileAttackReaper = content.Load<Texture2D>("HostileAttackReaper-Sheet");
+            HolsterWeaponReaper = content.Load<Texture2D>("HolsterWeaponReaper");
+            HostileRunningReaper = content.Load<Texture2D>("PassiveRunningReaper-Sheet");
+
 
             archerSprite = new ArcherSprite(archerIdle, 1, 8);
 
@@ -58,10 +61,7 @@ namespace semester_1
 
         }
 
-        public async System.Threading.Tasks.Task DelayTask(double Time)
-        {
-            await System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(Time));
-        }
+
 
 
         private async void Input(GameTime gameTime)
@@ -101,16 +101,12 @@ namespace semester_1
                         if (currentTime >= countDuration)
                         {
 
-                            archerSprite = new ArcherSprite(archerIdle, 1, 8);
-                            hostileRunning = new HostileRunningReaper(reaperIdle, 1, 5);
+
                             currentTime -= countDuration;
                             await DelayTask(1.5);
-
                             Health -= 10;
-
+                            archerSprite = new ArcherSprite(archerIdle, 1, 8);
                             PlayerTurn = false;
-
-
                         }
                     }
                 }
