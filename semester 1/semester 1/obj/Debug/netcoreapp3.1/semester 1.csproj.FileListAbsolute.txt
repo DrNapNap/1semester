@@ -90,3 +90,8 @@ C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcorea
 C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\spr_ArcherIdle_strip_NoBkg.xnb
 C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\HostileAttackReaper-Sheet.xnb
 C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\HolsterWeaponReaper.xnb
+C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\PassiveIdleReaper-Sheet.xnb
+C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\HolsterWeaponReaper-Sheet.xnb
+C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\HostileIdleReaper-Sheet.xnb
+C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\HostileRunningReaper-Sheet.xnb
+C:\Users\nap\Documents\GitHub\1semester\semester 1\semester 1\bin\Debug\netcoreapp3.1\Content\PassiveRunningReaper-Sheet.xnb

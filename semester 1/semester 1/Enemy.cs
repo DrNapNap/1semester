@@ -1,42 +1,51 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Threading.Tasks;
 
 namespace semester_1
 {
     public class Enemy : GameObject
     {
-        public int healthEnemy;
+        
 
 
-        public HostileRunningReaper hostileRunning;
-        protected Texture2D reaperIdle;
+        protected HostileRunningReaper hostileRunning;
+        
+        protected Texture2D HostileAttackReaper;
+        protected Texture2D HostileIdleReaper;
+        protected Texture2D HolsterWeaponReaper;
+        protected Texture2D HostileRunningReaper;
 
-        private int attack;
+        
 
 
-        public Enemy()
-        {
-            healthEnemy = 100;
-        }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            hostileRunning.Draw(spriteBatch, new Vector2(300, 300));
+            hostileRunning.Draw(spriteBatch, new Vector2(300, 300), SpriteEffects.None);
+
         }
 
         public override void LoadContent(ContentManager content)
         {
 
+            
+      
 
 
             timer = 0;
-            threshold = 50;
+            threshold = 110;
 
-            reaperIdle = content.Load<Texture2D>("HolsterWeaponReaper");
+            reaperIdle = content.Load<Texture2D>("PassiveIdleReaper-Sheet");
+
+            HostileAttackReaper = content.Load<Texture2D>("HostileAttackReaper-Sheet");
+            HolsterWeaponReaper = content.Load<Texture2D>("HolsterWeaponReaper");
+            HostileRunningReaper = content.Load<Texture2D>("PassiveRunningReaper-Sheet");
 
 
-            hostileRunning = new HostileRunningReaper(reaperIdle, 1, 10);
+            hostileRunning = new HostileRunningReaper(reaperIdle, 1, 5);
 
             // health Player
 
@@ -45,17 +54,11 @@ namespace semester_1
 
 
 
+
+
         public override void Update(GameTime gameTime)
         {
-            if (playerTurn == false  )
-            {
-
-                health -= 10;
-
-                playerTurn = true;
-            }
-
-
+            
 
             if (timer > threshold)
             {
@@ -66,6 +69,13 @@ namespace semester_1
             {
                 timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             }
+
+      
+
+            
+
+
+
 
         }
     }

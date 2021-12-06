@@ -37,7 +37,7 @@ namespace semester_1
             bool result = true;
 
        
-                if (healthEnemy == 0)
+                if (HealthEnemy == 0)
                 {
                     result = false;
                  

@@ -31,7 +31,7 @@ namespace semester_1
                 currentFrame = 0;
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, SpriteEffects flipHorizontally)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;

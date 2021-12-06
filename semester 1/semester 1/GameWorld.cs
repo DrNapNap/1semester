@@ -9,11 +9,10 @@ namespace semester_1
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-
-
-
+        private SpriteFont text;
         List<GameObject> gameObjects = new List<GameObject>();
- 
+
+        private Player newObjectsPlayer;
 
         public GameWorld()
         {
@@ -27,18 +26,21 @@ namespace semester_1
             // TODO: Add your initialization logic here
 
             gameObjects = new List<GameObject>();
-            
 
-            gameObjects.Add(new Player());
+            newObjectsPlayer = new Player();
+
             gameObjects.Add(new Enemy());
 
-           
+            gameObjects.Add(newObjectsPlayer);
+
+
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            text = Content.Load<SpriteFont>("File");
 
 
             foreach (var item in gameObjects)
@@ -87,6 +89,12 @@ namespace semester_1
                 item.Draw(spriteBatch);
 
             }
+
+            spriteBatch.DrawString(text, "Heatlh: " + newObjectsPlayer.Health.ToString(), new Vector2(20, 20), Color.Red, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
+
+            spriteBatch.DrawString(text, "Heatlh: HealthEnemy " + newObjectsPlayer.HealthEnemy.ToString(), new Vector2(300, 20), Color.Red, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
+
+
             spriteBatch.End();
 
 

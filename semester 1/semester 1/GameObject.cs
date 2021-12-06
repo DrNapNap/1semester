@@ -26,8 +26,8 @@ namespace semester_1
         protected byte previousAnimationIndex;
         protected byte currentAnimationIndex;
 
-        public Texture2D animationsIdle;
-        public Texture2D animationsMelee;
+
+        public Texture2D reaperIdle;
 
         public Rectangle[] sourceRectangles;
         public Rectangle[] sourceRectanglesMelee;
@@ -37,32 +37,23 @@ namespace semester_1
         protected SpriteEffects effect;
         public Rectangle rectangle;
 
-        protected int health;
+        private int health;
 
-        public int Health
-        {
-            get { return health = 100; }
-            set
-            {
-                if (value > 0 && value <= 100)
-                {
-                    health = value;
-                }
-            }
-        }
+        private int healthEnemy;
 
-        public bool playerTurn;
+        private bool playerTurn;
 
-
-
-
-
-
+        private bool playerTurnEnemy;
 
         protected GameObject()
         {
-            health = 100;
+            
         }
+
+        public bool PlayerTurnEnemy { get => playerTurnEnemy; set => playerTurnEnemy = value; }
+        public bool PlayerTurn { get => playerTurn; set => playerTurn = value; }
+        public int HealthEnemy { get => healthEnemy; set => healthEnemy = value; }
+        public int Health { get => health; set => health = value; }
 
 
         public abstract void Update(GameTime gameTime);
@@ -71,12 +62,12 @@ namespace semester_1
 
 
         public abstract void Draw(SpriteBatch spriteBatch);
-     
 
 
-          
 
-        
+
+
+
 
 
 
