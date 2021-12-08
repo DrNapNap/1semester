@@ -61,11 +61,6 @@ namespace semester_1
 
 
 
-            HostileAttackReaper = content.Load<Texture2D>("HostileAttackReaper-Sheet");
-            HolsterWeaponReaper = content.Load<Texture2D>("HolsterWeaponReaper");
-            HostileRunningReaper = content.Load<Texture2D>("PassiveRunningReaper-Sheet");
-
-
             archerSprite = new ArcherSprite(archerIdle, 1, 8);
 
             // health Player

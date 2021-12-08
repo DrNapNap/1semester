@@ -6,12 +6,10 @@
   <SourceFiles>
     <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/File.spritefont</File>
     <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/HolsterWeaponReaper.png</File>
-    <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/HolsterWeaponReaper-Sheet.png</File>
-    <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/HostileAttackReaper-Sheet.png</File>
-    <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/HostileIdleReaper-Sheet.png</File>
-    <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/HostileRunningReaper-Sheet.png</File>
+    <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/HostileAttackReaper-Sheet_Flipped.png</File>
+    <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/HostileRunningReaper-Sheet_Flipped.png</File>
     <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/PassiveIdleReaper-Sheet.png</File>
-    <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/PassiveRunningReaper-Sheet.png</File>
+    <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/PassiveRunningReaper-Sheet_Flipped.png</File>
     <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/spr_ArcherAttack_strip_NoBkg.png</File>
     <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/spr_ArcherAttack_strip_WithBkg.png</File>
     <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/spr_ArcherDash_strip_NoBkg.png</File>
@@ -25,6 +23,8 @@
     <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/spr_ArcherMelee_strip_WithBkg.png</File>
     <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/spr_ArcherRun_strip_NoBkg.png</File>
     <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/spr_ArcherRun_strip_WithBkg.png</File>
+    <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/unknown.png</File>
+    <File>C:/Users/nap/Documents/GitHub/1semester/semester 1/semester 1/Content/WieldWeaponReaper-Sheet_Flipped.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

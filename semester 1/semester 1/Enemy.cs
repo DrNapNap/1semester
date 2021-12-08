@@ -30,9 +30,9 @@ namespace semester_1
             reaperIdle = content.Load<Texture2D>("PassiveIdleReaper-Sheet");
 
 
-            HostileAttackReaper = content.Load<Texture2D>("HostileAttackReaper-Sheet");
+            HostileAttackReaper = content.Load<Texture2D>("HostileAttackReaper-Sheet_Flipped");
             HolsterWeaponReaper = content.Load<Texture2D>("HolsterWeaponReaper");
-            HostileRunningReaper = content.Load<Texture2D>("PassiveRunningReaper-Sheet");
+            HostileRunningReaper = content.Load<Texture2D>("PassiveRunningReaper-Sheet_Flipped");
 
 
 

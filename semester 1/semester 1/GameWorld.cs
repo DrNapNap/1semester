@@ -13,6 +13,9 @@ namespace semester_1
         List<GameObject> gameObjects = new List<GameObject>();
 
         private Player newObjectsPlayer;
+        private Rectangle? srcRect;
+        private Vector2 position1;
+        private Texture2D tex;
 
         public GameWorld()
         {
@@ -41,6 +44,9 @@ namespace semester_1
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             text = Content.Load<SpriteFont>("File");
+
+            tex = Content.Load<Texture2D>("unknown");
+
 
 
             foreach (var item in gameObjects)
@@ -83,6 +89,11 @@ namespace semester_1
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
+
+            spriteBatch.Draw(tex, position1, srcRect, Color.White, 0f, Vector2.Zero, 0.8f, SpriteEffects.None, 0f);
+
+
+
 
             foreach (var item in gameObjects)
             {

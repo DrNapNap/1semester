@@ -32,7 +32,7 @@
 /processorParam:TextureFormat=Color
 /build:HolsterWeaponReaper.png
 
-#begin HolsterWeaponReaper-Sheet.png
+#begin HostileAttackReaper-Sheet_Flipped.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -42,9 +42,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:HolsterWeaponReaper-Sheet.png
+/build:HostileAttackReaper-Sheet_Flipped.png
 
-#begin HostileAttackReaper-Sheet.png
+#begin HostileRunningReaper-Sheet_Flipped.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -54,31 +54,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:HostileAttackReaper-Sheet.png
-
-#begin HostileIdleReaper-Sheet.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:HostileIdleReaper-Sheet.png
-
-#begin HostileRunningReaper-Sheet.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:HostileRunningReaper-Sheet.png
+/build:HostileRunningReaper-Sheet_Flipped.png
 
 #begin PassiveIdleReaper-Sheet.png
 /importer:TextureImporter
@@ -92,7 +68,7 @@
 /processorParam:TextureFormat=Color
 /build:PassiveIdleReaper-Sheet.png
 
-#begin PassiveIdleReaper-Sheet.png
+#begin PassiveRunningReaper-Sheet_Flipped.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -102,19 +78,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:PassiveIdleReaper-Sheet.png
-
-#begin PassiveRunningReaper-Sheet.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:PassiveRunningReaper-Sheet.png
+/build:PassiveRunningReaper-Sheet_Flipped.png
 
 #begin spr_ArcherAttack_strip_NoBkg.png
 /importer:TextureImporter
@@ -271,4 +235,28 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:spr_ArcherRun_strip_WithBkg.png
+
+#begin unknown.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:unknown.png
+
+#begin WieldWeaponReaper-Sheet_Flipped.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:WieldWeaponReaper-Sheet_Flipped.png
 
