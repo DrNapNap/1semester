@@ -90,9 +90,10 @@ namespace semester_1
 
             }
 
-            spriteBatch.DrawString(text, "Heatlh: " + newObjectsPlayer.Health.ToString(), new Vector2(20, 20), Color.Red, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
+            spriteBatch.DrawString(text, "Heatlh: " + newObjectsPlayer.Health.ToString(), new Vector2(20, 20), Color.Green, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
+            spriteBatch.DrawString(text, "Mana: " + newObjectsPlayer.Mana.ToString(), new Vector2(20, 40), Color.Red, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
 
-            spriteBatch.DrawString(text, "Heatlh: HealthEnemy " + newObjectsPlayer.HealthEnemy.ToString(), new Vector2(300, 20), Color.Red, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
+            spriteBatch.DrawString(text, "Heatlh: " + newObjectsPlayer.HealthEnemy.ToString(), new Vector2(300, 20), Color.Red, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
 
 
             spriteBatch.End();

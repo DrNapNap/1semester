@@ -16,14 +16,18 @@ namespace semester_1
         private int currentFrame;
         private int totalFrames;
 
+
         public HostileRunningReaper(Texture2D reaperIdle, int rows, int columns)
         {
+            
             Texture = reaperIdle;
             Rows = rows;
             Columns = columns;
             currentFrame = 0;
             totalFrames = Rows * Columns;
         }
+
+
 
         public void Update()
         {

@@ -1,29 +1,27 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Threading.Tasks;
 
 namespace semester_1
 {
     public class Enemy : GameObject
     {
 
-
+       
 
 
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            hostileRunning.Draw(spriteBatch, new Vector2(300, 300), SpriteEffects.None);
+            hostileRunning.Draw(spriteBatch, new Vector2(400, 380), SpriteEffects.None);
 
         }
 
         public override void LoadContent(ContentManager content)
         {
 
-            
-      
+
+
 
 
             timer = 0;
@@ -36,26 +34,37 @@ namespace semester_1
             HolsterWeaponReaper = content.Load<Texture2D>("HolsterWeaponReaper");
             HostileRunningReaper = content.Load<Texture2D>("PassiveRunningReaper-Sheet");
 
-       
-            
 
-            hostileRunning = new HostileRunningReaper(reaperIdle, 1, 5);
+
+
+            hostileRunningd = new HostileRunningReaper(reaperIdle, 1, 5);
+
+
+
+            hostileRunning = hostileRunningd;
+
+ 
 
             // health Player
 
         }
 
 
+        public Enemy()
+        {
+
+            animation1 = playerTurnEnemy;
 
 
+        }
 
 
         public override void Update(GameTime gameTime)
         {
-
-
-
-
+           if (animation1)
+            {
+                hostileRunningd = new HostileRunningReaper(HostileAttackReaper, 1, 10);
+            }
 
             if (timer > threshold)
             {
@@ -66,12 +75,6 @@ namespace semester_1
             {
                 timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             }
-
-      
-
-            
-
-
 
 
         }

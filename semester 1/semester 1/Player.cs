@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 
+
 namespace semester_1
 {
     internal class Player : GameObject
@@ -15,11 +16,13 @@ namespace semester_1
         private bool canFire = true;
 
 
-        public ArcherSprite archerSprite;
+        private ArcherSprite archerSprite;
 
         protected Texture2D archerIdle;
         protected Texture2D archerd;
         protected Texture2D archer2;
+
+
 
 
         int counter = 1;
@@ -27,12 +30,20 @@ namespace semester_1
         float countDuration = 0.016f; //every  2s.
         float currentTime = 0f;
 
+        private int mana;
 
+       
+
+
+        public int Mana { get => mana; }
 
         public Player()
         {
             Health = 100;
             HealthEnemy = 100;
+            mana = 50;
+            
+
 
         }
 
@@ -47,6 +58,9 @@ namespace semester_1
             archerIdle = content.Load<Texture2D>("spr_ArcherIdle_strip_NoBkg");
             archerd = content.Load<Texture2D>("spr_ArcherAttack_strip_NoBkg");
             archer2 = content.Load<Texture2D>("spr_ArcherMelee_strip_NoBkg");
+
+
+
             HostileAttackReaper = content.Load<Texture2D>("HostileAttackReaper-Sheet");
             HolsterWeaponReaper = content.Load<Texture2D>("HolsterWeaponReaper");
             HostileRunningReaper = content.Load<Texture2D>("PassiveRunningReaper-Sheet");
@@ -63,6 +77,11 @@ namespace semester_1
 
 
 
+        //private static void animation1(Enemy dwadwa)
+        //{
+        //    dwadwa.hostileRunningadwwad = new HostileRunningReaper(HostileAttackReaper, 1, 10);
+        //}
+
 
         private async void Input(GameTime gameTime)
         {
@@ -71,44 +90,46 @@ namespace semester_1
             keyboard = Keyboard.GetState();
             //Input
 
-
+            var random = new Random();
 
             if (keyboard.IsKeyDown(Keys.Q))
             {
-                if (canFire == true)
+                if (canFire == true && mana >= 3)
                 {
                     canFire = false;
                     if (PlayerTurn == false)
                     {
-
+                        int ranHealth = random.Next(1, 19);
 
                         archerSprite = new ArcherSprite(archerd, 1, 14);
+                        await DelayTask(1.5);
 
+                        playerTurnEnemy = true;
 
-                        HealthEnemy -= 10;
+                         mana -= 3;
+                        HealthEnemy -= ranHealth;
 
                         PlayerTurn = true;
-
-                        PlayerTurnEnemy = true;
-
-
 
                     }
                     if (PlayerTurn == true)
                     {
-
                         currentTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
                         if (currentTime >= countDuration)
                         {
-
-
                             currentTime -= countDuration;
                             await DelayTask(1.5);
-                            Health -= 10;
+                            int healthEnemay = random.Next(1, 20);
+                            //henlth
+
+                            Health -= healthEnemay;
                             archerSprite = new ArcherSprite(archerIdle, 1, 8);
                             PlayerTurn = false;
                         }
                     }
+
+
+
                 }
 
             }
@@ -153,6 +174,18 @@ namespace semester_1
 
 
 
+        private async void ManaAsync()
+        {
+
+            await DelayTask(300);
+
+            mana++;
+
+        }
+
+
+
+
         public override void Update(GameTime gameTime)
         {
             if (Health <= 0)
@@ -162,8 +195,17 @@ namespace semester_1
             if (HealthEnemy <= 0)
             {
                 HealthEnemy = 0;
+
             }
 
+            if (mana <= 0)
+            {
+                mana = 0;
+            }
+            if (mana > 51)
+            {
+                mana = 50;
+            }
 
             Input(gameTime);
 
@@ -176,6 +218,9 @@ namespace semester_1
             {
                 timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             }
+
+
+            ManaAsync();
 
         }
 

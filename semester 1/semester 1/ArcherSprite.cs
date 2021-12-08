@@ -24,6 +24,10 @@ namespace semester_1
             totalFrames = Rows * Columns;
         }
 
+
+
+
+
         public void Update()
         {
             currentFrame++;
@@ -43,6 +47,11 @@ namespace semester_1
 
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+        }
+
+        public static implicit operator ArcherSprite(HostileRunningReaper v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

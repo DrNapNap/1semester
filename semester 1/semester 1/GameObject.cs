@@ -27,18 +27,19 @@ namespace semester_1
         protected byte currentAnimationIndex;
 
 
-        public Texture2D reaperIdle;
-        public Texture2D HolsterWeaponReaper;
+        public  Texture2D reaperIdle;
+        public  Texture2D HolsterWeaponReaper;
 
 
-        public Texture2D HostileAttackReaper;
+        public static Texture2D HostileAttackReaper;
         public Texture2D HostileIdleReaper;
         public Texture2D HostileRunningReaper;
 
 
         public HostileRunningReaper hostileRunning;
-
-
+        public  HostileRunningReaper hostileRunningd;
+    
+        
 
 
         //Rendering
@@ -52,9 +53,10 @@ namespace semester_1
 
         private bool playerTurn;
 
-        private bool playerTurnEnemy;
+        public bool playerTurnEnemy;
+        public bool animation1;
 
-        protected GameObject()
+        public GameObject()
         {
             
         }
@@ -79,6 +81,10 @@ namespace semester_1
         {
             await System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(Time));
         }
+
+
+
+
 
 
 
