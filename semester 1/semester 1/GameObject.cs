@@ -14,14 +14,6 @@ namespace semester_1
 
         protected Vector2 Origen;
 
-        public Texture2D sprite;
-
-        // A timer that stores milliseconds.
-        public float timer;
-        // An int that is the threshold for the timer.
-        public int threshold;
-        // A Rectangle array that stores sourceRectangles for animations.
-
         // These bytes tell the spriteBatch.Draw() what sourceRectangle to display.
         protected byte previousAnimationIndex;
         protected byte currentAnimationIndex;
@@ -37,14 +29,14 @@ namespace semester_1
 
 
         public HostileRunningReaper hostileRunning;
-        public  HostileRunningReaper hostileRunningd;
+        
     
         
 
 
         //Rendering
         public float layerDepth;
-        protected SpriteEffects effect;
+        public SpriteEffects effect;
         public Rectangle rectangle;
 
         private int health;
@@ -53,15 +45,17 @@ namespace semester_1
 
         private bool playerTurn;
 
-        public bool playerTurnEnemy;
+        private bool playerTurnEnemy;
         public bool animation1;
 
         public GameObject()
         {
-            
+            Health = 100;
+            HealthEnemy = 100;
         }
 
         public bool PlayerTurnEnemy { get => playerTurnEnemy; set => playerTurnEnemy = value; }
+        //public bool PlayerTurn { get => playerTurn; set => playerTurn = value; }
         public bool PlayerTurn { get => playerTurn; set => playerTurn = value; }
         public int HealthEnemy { get => healthEnemy; set => healthEnemy = value; }
         public int Health { get => health; set => health = value; }

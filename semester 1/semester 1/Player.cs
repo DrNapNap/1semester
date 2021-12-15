@@ -23,27 +23,24 @@ namespace semester_1
         protected Texture2D archer2;
 
 
-
-
-        int counter = 1;
-        int limit = 50;
         float countDuration = 0.016f; //every  2s.
         float currentTime = 0f;
 
         private int mana;
 
-       
+        private bool manaTrue;
 
+
+
+        private float timer;
+        private int threshold;
 
         public int Mana { get => mana; }
 
         public Player()
         {
-            Health = 100;
-            HealthEnemy = 100;
-            mana = 50;
-            
 
+            mana = 50;
 
         }
 
@@ -63,7 +60,6 @@ namespace semester_1
 
             archerSprite = new ArcherSprite(archerIdle, 1, 8);
 
-            // health Player
 
 
 
@@ -89,19 +85,24 @@ namespace semester_1
 
             if (keyboard.IsKeyDown(Keys.Q))
             {
-                if (canFire == true && mana >= 3)
+                //if (mana < 3)
+                //{
+                //    canFire = false;
+                //}
+
+                if (canFire == true)
                 {
                     canFire = false;
                     if (PlayerTurn == false)
                     {
-                        int ranHealth = random.Next(1, 19);
+                        int ranHealth = random.Next(1, 10);
 
                         archerSprite = new ArcherSprite(archerd, 1, 14);
-                        await DelayTask(1.5);
 
-                        playerTurnEnemy = true;
 
-                         mana -= 3;
+                        PlayerTurnEnemy = true;
+
+                        mana -= 3;
                         HealthEnemy -= ranHealth;
 
                         PlayerTurn = true;
@@ -113,11 +114,12 @@ namespace semester_1
                         if (currentTime >= countDuration)
                         {
                             currentTime -= countDuration;
-                            await DelayTask(1.5);
-                            int healthEnemay = random.Next(1, 20);
+                            await DelayTask(2.0);
+                            int healthEnemay = random.Next(1, 3);
                             //henlth
 
                             Health -= healthEnemay;
+                            healthEnemay = 0;
                             archerSprite = new ArcherSprite(archerIdle, 1, 8);
                             PlayerTurn = false;
                         }
@@ -125,61 +127,213 @@ namespace semester_1
 
 
 
+
                 }
+
 
             }
             else if (keyboard.IsKeyDown(Keys.W))
             {
-                if (canFire == true)
+                if (mana < 5)
                 {
-
-                    archerSprite = new ArcherSprite(archer2, 1, 28);
                     canFire = false;
                 }
-            }
-            else if (keyboard.IsKeyDown(Keys.E))
-            {
-                if (canFire == true)
-                {
 
-                    archerSprite = new ArcherSprite(archerd, 1, 14);
-                    canFire = false;
-                }
-            }
-            else if (keyboard.IsKeyDown(Keys.R))
-            {
                 if (canFire == true)
                 {
                     canFire = false;
-                    archerSprite = new ArcherSprite(archer2, 1, 28);
+                    if (PlayerTurn == false)
+                    {
+                        int ranHealth = random.Next(1, 19);
+
+                        archerSprite = new ArcherSprite(archer2, 1, 28);
+
+
+                        PlayerTurnEnemy = true;
+
+                        mana -= 5;
+                        HealthEnemy -= ranHealth;
+
+                        PlayerTurn = true;
+                        await DelayTask(0.5);
+                    }
+                    if (PlayerTurn == true)
+                    {
+                        currentTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                        if (currentTime >= countDuration)
+                        {
+                            currentTime -= countDuration;
+                            //delay
+                            await DelayTask(2.0);
+                            int healthEnemay = random.Next(1, 3);
+                            //henlth
+
+                            Health -= healthEnemay;
+                            healthEnemay = 0;
+                            archerSprite = new ArcherSprite(archerIdle, 1, 8);
+                            PlayerTurn = false;
+                        }
+                    }
 
 
                 }
-            }
+                else if (keyboard.IsKeyDown(Keys.E))
+                {
 
+
+                    if (mana < 11)
+                    {
+                        canFire = false;
+                    }
+
+                    if (canFire == true)
+                    {
+                        canFire = false;
+                        if (PlayerTurn == false)
+                        {
+                            int ranHealth = random.Next(1, 19);
+
+                            archerSprite = new ArcherSprite(archerd, 1, 14);
+
+
+                            PlayerTurnEnemy = true;
+
+                            mana -= 11;
+                            HealthEnemy -= ranHealth;
+
+                            PlayerTurn = true;
+                            await DelayTask(0.5);
+                        }
+                        if (PlayerTurn == true)
+                        {
+                            currentTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                            if (currentTime >= countDuration)
+                            {
+                                currentTime -= countDuration;
+                                //delay
+                                await DelayTask(2.0);
+                                int healthEnemay = random.Next(1, 3);
+                                //henlth
+
+                                Health -= healthEnemay;
+                                healthEnemay = 0;
+                                archerSprite = new ArcherSprite(archerIdle, 1, 8);
+                                PlayerTurn = false;
+                            }
+                        }
+
+
+                    }
+                }
+
+                else if (keyboard.IsKeyDown(Keys.R))
+                {
+
+                    if (mana < 13)
+                    {
+                        canFire = false;
+                    }
+
+                    if (canFire == true)
+                    {
+                        canFire = false;
+                        if (PlayerTurn == false)
+                        {
+                            int ranHealth = random.Next(1, 19);
+
+                            archerSprite = new ArcherSprite(archer2, 1, 28);
+
+
+                            PlayerTurnEnemy = true;
+
+                            mana -= 13;
+                            HealthEnemy -= ranHealth;
+
+                            PlayerTurn = true;
+                            await DelayTask(0.5);
+                        }
+                        if (PlayerTurn == true)
+                        {
+                            currentTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                            if (currentTime >= countDuration)
+                            {
+                                currentTime -= countDuration;
+                                //delay
+                                await DelayTask(2.0);
+                                int healthEnemay = random.Next(1, 3);
+                                //henlth
+
+                                Health -= healthEnemay;
+                                healthEnemay = 0;
+                                archerSprite = new ArcherSprite(archerIdle, 1, 8);
+                                PlayerTurn = false;
+                            }
+                        }
+
+
+                    }
+
+                }
+
+
+
+
+            }
+            CanFire();
+        }
+
+
+        private void CanFire()
+        {
             if (keyboard.IsKeyUp(Keys.Q))
             {
                 canFire = true;
 
             }
-
-
+            else if (keyboard.IsKeyUp(Keys.W))
+            {
+                canFire = true;
+            }
+            else if (keyboard.IsKeyUp(Keys.E))
+            {
+                canFire = true;
+            }
+            else if (keyboard.IsKeyUp(Keys.R))
+            {
+                canFire = true;
+            }
 
         }
+
+
+
 
 
 
         private async void ManaAsync()
         {
 
-            await DelayTask(300);
 
-            mana++;
+            if (manaTrue == true)
+            {
+
+
+
+                if (mana == 50)
+                {
+                    mana += 1;
+
+                }
+                else if (mana > 50)
+                {
+manaTrue = false;
+                }
+
+                
+            }
+
 
         }
-
-
-
 
         public override void Update(GameTime gameTime)
         {
@@ -196,8 +350,14 @@ namespace semester_1
             if (mana <= 0)
             {
                 mana = 0;
+
             }
-            if (mana > 51)
+            else if (mana <= 3)
+            {
+                manaTrue = true;
+                ManaAsync();
+            }
+            if (mana > 50)
             {
                 mana = 50;
             }
@@ -215,7 +375,7 @@ namespace semester_1
             }
 
 
-            ManaAsync();
+
 
         }
 

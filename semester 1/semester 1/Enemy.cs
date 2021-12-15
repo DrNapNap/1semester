@@ -7,8 +7,12 @@ namespace semester_1
     public class Enemy : GameObject
     {
 
-       
+        private float timerEnemy;
+        private int thresholdEnemy;
 
+        private HostileRunningReaper hostileRunningd;
+
+        private HostileRunningReaper hostileRunningT;
 
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -19,13 +23,8 @@ namespace semester_1
 
         public override void LoadContent(ContentManager content)
         {
-
-
-
-
-
-            timer = 0;
-            threshold = 110;
+            timerEnemy = 0;
+            thresholdEnemy = 110;
 
             reaperIdle = content.Load<Texture2D>("PassiveIdleReaper-Sheet");
 
@@ -34,26 +33,18 @@ namespace semester_1
             HolsterWeaponReaper = content.Load<Texture2D>("HolsterWeaponReaper");
             HostileRunningReaper = content.Load<Texture2D>("PassiveRunningReaper-Sheet_Flipped");
 
-
-
-
             hostileRunningd = new HostileRunningReaper(reaperIdle, 1, 5);
 
-
+            
 
             hostileRunning = hostileRunningd;
-
- 
-
-            // health Player
-
         }
 
 
         public Enemy()
         {
 
-            animation1 = playerTurnEnemy;
+            animation1 = PlayerTurnEnemy;
 
 
         }
@@ -61,19 +52,20 @@ namespace semester_1
 
         public override void Update(GameTime gameTime)
         {
-           if (animation1)
+           if (animation1 == true)
             {
-                hostileRunningd = new HostileRunningReaper(HostileAttackReaper, 1, 10);
+                hostileRunningT = new HostileRunningReaper(HostileAttackReaper, 1, 10);
+                hostileRunning = hostileRunningT;
             }
 
-            if (timer > threshold)
+            if (timerEnemy > thresholdEnemy)
             {
                 hostileRunning.Update();
-                timer = 0;
+                timerEnemy = 0;
             }
             else
             {
-                timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                timerEnemy += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             }
 
 

@@ -16,6 +16,7 @@ namespace semester_1
         private Rectangle? srcRect;
         private Vector2 position1;
         private Texture2D tex;
+  
 
         public GameWorld()
         {
@@ -102,9 +103,9 @@ namespace semester_1
             }
 
             spriteBatch.DrawString(text, "Heatlh: " + newObjectsPlayer.Health.ToString(), new Vector2(20, 20), Color.Green, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
-            spriteBatch.DrawString(text, "Mana: " + newObjectsPlayer.Mana.ToString(), new Vector2(20, 40), Color.Red, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
+            spriteBatch.DrawString(text, "Mana: " + newObjectsPlayer.Mana.ToString(), new Vector2(20, 50), Color.Blue, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
 
-            spriteBatch.DrawString(text, "Heatlh: " + newObjectsPlayer.HealthEnemy.ToString(), new Vector2(300, 20), Color.Red, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
+            spriteBatch.DrawString(text, "Heatlh: " + newObjectsPlayer.HealthEnemy.ToString(), new Vector2(600, 20), Color.Green, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
 
 
             spriteBatch.End();
